@@ -1,7 +1,7 @@
 ./README.md:TODO: output options and some way of using Racket procedures as urlang macros
-./p5.rkt:; TODO #lang p5, mostly to hide macros
-./p5.rkt:                 ; TODO subst or something
-./p5.rkt:                 ; TODO grab all p5 ids
+./p5.rkt:               ; TODO subst or something
+./p5.rkt:               ; TODO grab all p5 ids
 ./p5.rkt:; TODO test boids (classes are weird)
 ./p5.rkt:; TODO output types: stdout/file, just code/html
 ./p5.rkt:; TODO give racket stuff
+Binary file ./.git/index matches

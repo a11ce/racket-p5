@@ -1,6 +1,7 @@
 #lang racket
 (require urlang urlang/for urlang/extra)
 (require "p5-ids.rkt")
+(require (for-syntax syntax/strip-context))
 
 (provide (rename-out [module-begin-p5 #%module-begin]))
 
@@ -8,7 +9,7 @@
 (define-syntax (module-begin-p5 stx)
   (syntax-case stx ()
     [(_module-begin-p5 . body)
-     (with-syntax ([body (datum->syntax #'here (syntax->datum #'body))])
+     (with-syntax ([body (replace-context #'here #'body)])
        (syntax/loc stx
          (#%plain-module-begin
           (displayln (p5 . body)))))]))

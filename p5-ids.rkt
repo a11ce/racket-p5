@@ -13,7 +13,7 @@
 
 ;(define p5-defs '(var this createVector createCanvas fill mouseIsPressed mouseX mouseY ellipse day text))
 
-(define p5-defs '(var
+(define p5-defs '(import
                   describe
                   describeElement
                   textOutput

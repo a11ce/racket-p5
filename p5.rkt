@@ -1,5 +1,6 @@
 #lang racket
 (require urlang)
+(require "p5-ids.rkt")
 
 (provide (rename-out [module-begin-p5 #%module-begin]))
 
@@ -23,18 +24,17 @@
 
 (define-syntax-rule
   (p5 (expr ...))
-  ; urlang auto-prints the output, but we want a string instead
-  (parameterize ([current-output-port (open-output-string)])
-    (urlang
-     (urmodule p5
-                 
-               ; TODO subst or something
-               ; TODO grab all p5 ids
-               ; this is a hack so urlang doesnt complain about all the p5 identifiers
-               (var this createVector createCanvas fill mouseIsPressed mouseX mouseY ellipse day text)
-               expr ...))
-    ; drop "use strict" and the p5 defines
-    (drop-lines 2 (get-output-string (current-output-port)))))
+  (with-syntax ([p5-defs-syntax (map (lambda (d) (datum->syntax #'here d))
+                                     p5-defs)])
+    ; urlang auto-prints the output, but we want a string instead
+    (parameterize ([current-output-port (open-output-string)])
+      (urlang
+       (urmodule p5
+                 ; this is a hack so urlang doesnt complain about all the p5 identifiers
+                 p5-defs-syntax
+                 expr ...))
+      ; drop "use strict" and the p5 defines
+      (drop-lines 2 (get-output-string (current-output-port))))))
 
 
 ; https://p5js.org/examples/hello-p5-flocking.html

@@ -1,5 +1,5 @@
 #lang racket
-(require urlang)
+(require urlang urlang/for urlang/extra)
 (require "p5-ids.rkt")
 
 (provide (rename-out [module-begin-p5 #%module-begin]))

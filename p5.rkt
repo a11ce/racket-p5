@@ -34,8 +34,9 @@
                  ; this is a hack so urlang doesnt complain about all the p5 identifiers
                  p5-defs-syntax
                  expr ...))
-      ; drop "use strict" and the p5 defines
-      (drop-lines 2 (get-output-string (current-output-port))))))
+      ; drop "use strict"
+      ; TODO where did the defines go?
+      (drop-lines 1 (get-output-string (current-output-port))))))
 
 
 ; https://p5js.org/examples/hello-p5-flocking.html

@@ -6,12 +6,9 @@
 ; add 'var at the top
 ; then delete:
 ; - everything from 'let to 'while
-; - 'draw, 'setup
-; (cf. John 8:7)
+; - 'draw, 'setup, 'windowResized 'mouseDragged 'mousePressed 'mouseReleased
 
 (provide p5-defs)
-
-;(define p5-defs '(var this createVector createCanvas fill mouseIsPressed mouseX mouseY ellipse day text))
 
 (define p5-defs '(import
                   describe
@@ -29,7 +26,6 @@
                   displayHeight
                   windowWidth
                   windowHeight
-                  windowResized
                   width
                   height
                   fullscreen
@@ -239,9 +235,6 @@
                   mouseButton
                   mouseIsPressed
                   mouseMoved
-                  mouseDragged
-                  mousePressed
-                  mouseReleased
                   mouseClicked
                   doubleClicked
                   mouseWheel

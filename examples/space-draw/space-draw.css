@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    background-color: #000000;
+}
+
+button {
+    font-family: courier, courier-new, monospace;
+    background-color: #000000;
+    border: none;
+    color: white;
+    height: 50px;
+    padding: 0px 50px;
+    width: 33%;
+}

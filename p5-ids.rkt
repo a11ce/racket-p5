@@ -3,14 +3,17 @@
 ; go to https://p5js.org/reference/ and run
 ; Array.from(document.getElementsByClassName(code)).map(function(v) {return v.hash.substring(5)})
 ; find/replace "/,/etc to make it into a list of symbols
-; add 'var at the top
+; add 'import at the top
 ; then delete:
 ; - everything from 'let to 'while
 ; - 'draw, 'setup, 'windowResized 'mouseDragged 'mousePressed 'mouseReleased
+; and add:
+; - 'Math (comes up a lot)
 
 (provide p5-defs)
 
 (define p5-defs '(import
+                  Math
                   describe
                   describeElement
                   textOutput

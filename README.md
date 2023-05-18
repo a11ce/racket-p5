@@ -12,20 +12,24 @@ Start your file with `#lang p5`, then do your best to write p5 code with Racket 
 
 Running your program will display the compiled p5.js sketch. 
 
-## Why?
+### Options
 
-I like Racket's syntax. I do not like JavaScript's syntax.
+Certain top-level expressions (prefixed with `^`) are recognized as language options. They are applied per source file.
+
+- `(^output-file "filename.js")` writes the compiled JS to the specified path.
 
 ## How it works
 
 `#lang p5` is a wrapper around urlang which:
 - makes urlang think that p5 identifiers are bound
 - adds the needed boilerplate so the user can focus on creating
-- TODO: provides multiple output formats 
+- provides some extra options
 
-## Is it any good?
+## Demos
 
-[Yes.](https://editor.p5js.org/a11ce/sketches/FZw3mATYb)
+- [space-draw](https://a11ce.com/racket-p5/examples/space-draw/space-draw.html)
+- [Unknown Pleasures](https://a11ce.com/racket-p5/examples/unknown-pleasures/unknown-pleasures.html)
+<!-- Add your own! -->
 
 --- 
 

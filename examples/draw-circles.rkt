@@ -1,5 +1,7 @@
 #lang p5
 
+(^output-file "draw-circles.js")
+
 (define (setup)
   (createCanvas 400 400))
  

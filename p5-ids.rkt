@@ -7,6 +7,7 @@
 ; then delete:
 ; - everything from 'let to 'while
 ; - 'draw, 'setup, 'windowResized 'mouseDragged 'mousePressed 'mouseReleased
+; - 'map
 ; and add:
 ; - 'Math (comes up a lot)
 
@@ -297,7 +298,6 @@
                   lerp
                   log
                   mag
-                  map
                   max
                   min
                   norm
